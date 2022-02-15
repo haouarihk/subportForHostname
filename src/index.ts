@@ -15,4 +15,8 @@ app.addHook('onRequest', async (req, reply) => {
     reply.redirect(new URL(path || "", `http://${ip.address()}:${port}`).toString());
 })
 
+app.get('/', (req, rep) => {
+    rep.send(200)
+})
+
 app.listen(process.env.port || 80, "localhost", () => console.log("server started"));
