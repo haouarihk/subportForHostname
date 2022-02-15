@@ -19,4 +19,4 @@ app.get('/', (req, rep) => {
     rep.send(200)
 })
 
-app.listen(process.env.port || 80, "localhost", () => console.log("server started"));
+app.listen(process.env.port || 80, process.env.host || ip.address(), () => console.log("server started"));
