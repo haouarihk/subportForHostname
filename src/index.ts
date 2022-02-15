@@ -24,7 +24,7 @@ async function setup() {
 
     // http.createServer().on('request',app)
     try {
-        await app.listen(process.env.port || 80, process.env.host || ip.address(), () => console.log("server started"))
+        await app.listen(process.env.port || 80, process.env.host || ip.address(), (...args) => console.log("server started", ...args))
     } catch (err) {
         console.log(err)
     }
